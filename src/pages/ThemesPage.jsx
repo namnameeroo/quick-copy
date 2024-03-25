@@ -1,9 +1,20 @@
 import {useEffect, useState} from "react";
 import "./ThemesPage.style.css";
 import ThemeCard from "../components/ThemeCard";
+import {useNavigate} from "react-router-dom";
 
 export default function ThemesPage() {
   const [cards, setCards] = useState([]);
+  const navigate = useNavigate();
+
+  const handleThemeCardClick = (boardId) => {
+    console.log("clicked");
+
+    console.info({boardid: boardId});
+
+    // navigate(`/board`, {boardId});
+    navigate(`/board/${boardId}`);
+  };
   useEffect(() => {
     if (cards && cards.length === 0) {
       setCards([
@@ -27,7 +38,11 @@ export default function ThemesPage() {
         {cards?.length !== 0 && (
           <>
             {cards.map((item) => (
-              <ThemeCard card={item} key={item.id} />
+              <ThemeCard
+                card={item}
+                key={item.id}
+                onClick={() => handleThemeCardClick(item.id)}
+              />
             ))}
           </>
         )}
