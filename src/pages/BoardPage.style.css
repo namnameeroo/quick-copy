@@ -1,0 +1,79 @@
+header {
+  text-align: center;
+  width: 100%;
+  font-size: xx-large;
+  font-weight: 700;
+  margin-top: 1.5em;
+}
+
+.board-container {
+  background-color: #cbf3f0;
+  width: auto;
+  height: 80vh;
+  border-radius: 1em;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 5px;
+}
+.board-item-area {
+  height: 80%;
+}
+
+.board-item-row {
+  height: 5em;
+  background-color: #ffffff;
+  border: solid 1px #2ec4b6;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8em;
+}
+
+.board-item-row:hover {
+  background-color: #f1faee;
+  cursor: pointer;
+
+  -webkit-box-shadow: -2px 2px 7px 0px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: -2px 2px 7px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: -2px 2px 7px 0px rgba(0, 0, 0, 0.39);
+}
+
+.label-data {
+  color: rgba(91, 135, 16, 0.62);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+#label-icon {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.content-data {
+  height: auto;
+  font-size: large;
+  text-align: center;
+  flex: 1;
+  align-content: center;
+  margin-bottom: 15px;
+}
+
+#memo-container {
+  position: relative;
+  bottom: 1px;
+  width: auto;
+}
+#memo-input {
+  padding: 5px;
+  min-height: 6em;
+  width: -webkit-fill-available;
+  align-content: start;
+  border: solid 1px #2ec4b6;
+  background-color: #eff7f6;
+  border-radius: 0 0 1em 1em;
+}
