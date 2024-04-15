@@ -27,6 +27,7 @@ export default function BoardPage() {
       }
     }
   }, []);
+
   const handleAddButton = () => {
     const inputText = userInput.current.value;
     if (inputText.length === 0) return;
@@ -39,6 +40,8 @@ export default function BoardPage() {
         content: inputText,
       },
     ]);
+    userInput.current.value = "";
+    console.log({boardData});
   };
 
   function LocalTestButton() {
@@ -99,7 +102,7 @@ export default function BoardPage() {
             id="memo-input"
             type="text"
             ref={userInput}
-            onKeyDown={(event) => {
+            onKeyPress={(event) => {
               if (event.key === "Enter") {
                 event.currentTarget.nextElementSibling.click();
                 // add button click
