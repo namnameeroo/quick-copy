@@ -102,7 +102,7 @@ export default function BoardPage() {
             id="memo-input"
             type="text"
             ref={userInput}
-            onKeyPress={(event) => {
+            onKeyUp={(event) => {
               if (event.key === "Enter") {
                 event.currentTarget.nextElementSibling.click();
                 // add button click
