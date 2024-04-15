@@ -21,50 +21,37 @@ export default function BoardPage() {
           {
             id: 1,
             label: "주소",
-            content: "서울시 구로구 어쩌구 19길 144, ",
+            content: "서울시 구로구 어쩌구 19길 144",
           },
         ]);
       }
     }
   }, []);
 
-  const handleAddButton = () => {
+  const handleAddButton = async () => {
     const inputText = userInput.current.value;
+
     if (inputText.length === 0) return;
 
-    setBoardData((prev) => [
-      ...prev,
-      {
-        id: prev.length + 1,
-        label: "test",
-        content: inputText,
-      },
-    ]);
-    userInput.current.value = "";
-    console.log({boardData});
-  };
+    setBoardData((prev) => {
+      const updateData = [
+        ...prev,
+        {
+          id: prev.length + 1,
+          label: "test",
+          content: inputText,
+        },
+      ];
 
-  function LocalTestButton() {
-    return (
-      <span>
-        <button
-          onClick={() => {
-            CommonLocalStorage().set({key: boardDataKey, value: boardData});
-          }}
-        >
-          local test set
-        </button>
-        <button
-          onClick={() => {
-            let x = CommonLocalStorage().get({key: boardDataKey});
-            alert(x);
-          }}
-        >
-          local test set
-        </button>
-      </span>
-    );
-  }
+      // localstorage save
+      CommonLocalStorage().set({key: boardDataKey, value: updateData});
+
+      return updateData;
+    });
+
+    // input text initialize
+    userInput.current.value = "";
+  };
 
   return (
     <>
@@ -72,8 +59,6 @@ export default function BoardPage() {
         <div>QUICK COPY</div>
       </header>
       <div className="board-container">
-        <LocalTestButton />
-
         <div className="board-item-area">
           {boardData?.length !== 0 &&
             boardData.map((board, boardKey) => (

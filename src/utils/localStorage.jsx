@@ -1,6 +1,7 @@
 export function CommonLocalStorage() {
   return {
     set: ({key, value}) => {
+      console.log("data saving...", {value});
       const data = JSON.stringify(value);
       localStorage.setItem(key, data);
     },
