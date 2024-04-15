@@ -9,7 +9,6 @@ export default function ThemesPage() {
 
   const handleThemeCardClick = (boardId) => {
     console.log("clicked");
-
     console.info({boardid: boardId});
 
     // navigate(`/board`, {boardId});

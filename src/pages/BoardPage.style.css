@@ -66,7 +66,9 @@ header {
 #memo-container {
   position: relative;
   bottom: 1px;
-  width: auto;
+  display: inline-flex;
+  align-items: stretch;
+  gap: 3px;
 }
 #memo-input {
   padding: 5px;
@@ -75,5 +77,11 @@ header {
   align-content: start;
   border: solid 1px #2ec4b6;
   background-color: #eff7f6;
-  border-radius: 0 0 1em 1em;
+  border-radius: 0 0 0 1em;
+}
+
+#memo-add-button {
+  border: solid 1px #2ec4b6;
+  color: #102725;
+  border-radius: 0 0 1em 0;
 }
