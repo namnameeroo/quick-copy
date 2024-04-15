@@ -10,6 +10,7 @@ export function CommonLocalStorage() {
       if (!savedData) {
         throw new Error("no data");
       } else {
+        console.info("local data loaded success");
         return JSON.parse(savedData);
       }
     },

@@ -20,6 +20,9 @@ header {
 }
 .board-item-area {
   height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .board-item-row {
